@@ -11,15 +11,32 @@ if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
     // Guardar en arreglo
     let numeros = [num1, num2, num3];
 
+    // Mostrar orden inicial
+    console.log("Orden inicial:", numeros.join(", "));
+    document.getElementById("resultado").innerHTML += "Orden inicial: " + numeros.join(", ") + "<br>";
+
     // Ordenar de mayor a menor
     let mayorMenor = [...numeros].sort((a, b) => b - a);
-    console.log("De mayor a menor:", mayorMenor);
+    console.log("De mayor a menor:", mayorMenor.join(", "));
     document.getElementById("resultado").innerHTML += "De mayor a menor: " + mayorMenor.join(", ") + "<br>";
 
     // Ordenar de menor a mayor
     let menorMayor = [...numeros].sort((a, b) => a - b);
-    console.log("De menor a mayor:", menorMayor);
+    console.log("De menor a mayor:", menorMayor.join(", "));
     document.getElementById("resultado").innerHTML += "De menor a mayor: " + menorMayor.join(", ") + "<br>";
+
+    // Identificar menor, centro y mayor
+    let menor = menorMayor[0];
+    let centro = menorMayor[1];
+    let mayor = menorMayor[2];
+
+    console.log("Número menor:", menor);
+    console.log("Número del centro:", centro);
+    console.log("Número mayor:", mayor);
+
+    document.getElementById("resultado").innerHTML += "Número menor: " + menor + "<br>";
+    document.getElementById("resultado").innerHTML += "Número del centro: " + centro + "<br>";
+    document.getElementById("resultado").innerHTML += "Número mayor: " + mayor + "<br>";
 
     // Verificar si son iguales
     if (num1 === num2 && num2 === num3) {
